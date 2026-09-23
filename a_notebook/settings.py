@@ -11,7 +11,13 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
-
+from dotenv import load_dotenv
+load_dotenv()
+name = os.getenv("db_name")
+user = os.getenv("user_name")
+password = os.getenv("db_password")
+host = os.getenv("db_host")
+port = os.getenv("db_port")
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -78,11 +84,11 @@ WSGI_APPLICATION = 'a_notebook.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'a_notebook_db',      # 刚才创建的数据库名
-        'USER': 'xin',                  # 你的 MySQL 用户名 (通常是 root)
-        'PASSWORD': '119911',            # ⚠️ 替换为你的真实 MySQL 密码
-        'HOST': '127.0.0.1',             # 本地数据库
-        'PORT': '3306',                  # MySQL 默认端口
+        'NAME': name,      # 刚才创建的数据库名
+        'USER': user,                  # 你的 MySQL 用户名 (通常是 root)
+        'PASSWORD': password,            # ⚠️ 替换为你的真实 MySQL 密码
+        'HOST': host,             # 本地数据库
+        'PORT': port,                  # MySQL 默认端口
     }
 }
 
