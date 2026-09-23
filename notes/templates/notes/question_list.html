@@ -1,0 +1,43 @@
+<!-- notes/templates/notes/question_list.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的错题本</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        .question-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 5px; }
+        .tag { background-color: #e0e0e0; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; }
+        .mastered { color: green; font-weight: bold; }
+        .unmastered { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>📚 我的错题与知识点</h1>
+    <p>
+    <a href="{% url 'add_question' %}" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+        ➕ 添加新错题
+    </a>
+</p>
+    
+    <!-- 使用 Django 模板语法循环遍历数据 -->
+    {% for q in questions %}
+        <div class="question-card">
+            <h3>{{ q.title }}</h3>
+            <p>{{ q.content }}</p>
+            <p>
+                <span class="tag">{{ q.tag }}</span>
+                <!-- 根据是否掌握显示不同颜色 -->
+                {% if q.is_mastered %}
+                    <span class="mastered">✅ 已掌握</span>
+                {% else %}
+                    <span class="unmastered">❌ 待复习</span>
+                {% endif %}
+                <small style="color: gray;">创建于: {{ q.created_at|date:"Y-m-d H:i" }}</small>
+            </p>
+        </div>
+    {% empty %}
+        <p>还没有记录任何错题，快去后台添加吧！</p>
+    {% endfor %}
+</body>
+</html>
