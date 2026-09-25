@@ -18,7 +18,6 @@
     <img src="https://img.shields.io/badge/a__notebook-Django%205.x-blue?style=for-the-badge&logo=django" alt="Logo">
   </a>
 
-  <h3 align="center">a_notebook</h3>
   <p align="center">
     一个基于 Django 的轻量级错题/知识点管理 Web 应用
     <br />
