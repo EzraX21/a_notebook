@@ -186,24 +186,10 @@ a_notebook/
 
 该项目使用Git进行版本管理。您可以在repository参看当前可用版本。
 
-### 作者
-
-EzraX21
-
-*您也可以在贡献者名单中参看所有参与该项目的开发者。*
 
 ### 版权说明
 
 该项目签署了MIT 授权许可，详情请参阅 [LICENSE](https://github.com/EzraX21/a_notebook/blob/main/LICENSE)
-
-### 鸣谢
-
-
-- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-- [Img Shields](https://shields.io)
-- [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Pages](https://pages.github.com)
-- [Animate.css](https://daneden.github.io/animate.css)
 
 <!-- links -->
 [your-project-path]:EzraX21/a_notebook
